@@ -1,0 +1,28 @@
+@import "src/styles";
+
+.title {
+  font-family: $montserrat;
+  color: white;
+  text-align: center;
+
+  //margin-top: 163px;
+  //margin-bottom: 141px;
+  margin: 163px 0 141px;
+
+  h1 {
+    font-size: 64px;
+    font-weight: 400;
+    margin-bottom: 12px !important;
+  }
+
+  h2 {
+    font-size: 32px;
+    font-weight: 500;
+  }
+}
+
+.songs {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

@@ -4,7 +4,7 @@ import {LandingPageComponent} from "./components/landing-page/landing-page.compo
 
 const routes: Routes = [
   {
-    path: "/", children: [
+    path: "", children: [
       {path: "", pathMatch: "full", component: LandingPageComponent}
     ]
   }

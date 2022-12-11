@@ -1,0 +1,25 @@
+@import "src/styles";
+
+.song-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .song-title {
+    font-family: $montserrat;
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+
+    margin-top: 16px;
+  }
+}
+
+// todo
+
+.song-image {
+  width: 310px;
+  height: 310px;
+  background-color: white;
+}

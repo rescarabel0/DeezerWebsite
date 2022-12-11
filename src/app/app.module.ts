@@ -5,12 +5,14 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {LandingPageComponent} from './components/landing-page/landing-page.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
+import {SongTileComponent} from './components/song-tile/song-tile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    NavbarComponent
+    NavbarComponent,
+    SongTileComponent
   ],
   imports: [
     BrowserModule,
