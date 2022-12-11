@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0 !important;
+
+  background: linear-gradient(
+      rgba(241, 42, 42, 0.08),
+      rgba(191, 28, 59, 0.19),
+      rgba(6, 173, 87, 0.29),
+      rgba(26, 187, 104, 0.27)) no-repeat;
+
+  height: 100vh !important;
+}
+
+html {
+  background: #201c1c;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
