@@ -1,0 +1,31 @@
+<div class="modal" id="search_modal">
+  <div class="modal-content">
+    <div class="search">
+      <div class="modal-header">
+      <span class="search-icon">
+        <span class="material-symbols-outlined icon">
+          search
+        </span>
+      </span>
+        <span class="search-input">
+        <input [(ngModel)]="search" placeholder="Procure no Deezer..." type="text">
+      </span>
+        <span class="search-submit">
+        <button (click)="submit()" class="btn">
+          IR
+        </button>
+      </span>
+      </div>
+      <div class="middle-bar"></div>
+      <div class="search-results">
+        <span class="result-count">Foram encontrados 0 resultados</span>
+        <ul class="music-list">
+          <li class="music-list-item" routerLink="musics/{{1}}">
+            <p>Título da música</p>
+            <small>Artista da música, Álbum</small>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

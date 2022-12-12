@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import $ from 'jquery';
 
 @Component({
@@ -6,13 +6,14 @@ import $ from 'jquery';
   templateUrl: './music-details-page.component.html',
   styleUrls: ['./music-details-page.component.scss']
 })
-export class MusicDetailsPageComponent implements OnInit {
+export class MusicDetailsPageComponent implements OnInit, OnDestroy {
   playing = false;
   previousTime = 0;
   currentTime = 0;
   widthBySongTime = 0;
 
   thumbWidth = 0;
+  intervalId: any;
 
   constructor() {
   }
@@ -23,6 +24,10 @@ export class MusicDetailsPageComponent implements OnInit {
     this.track();
   }
 
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
+  }
+
   toggle(): void {
     const audioElement = document.getElementById("song-preview") as HTMLAudioElement;
     if (!this.playing) audioElement.play().then();
@@ -31,7 +36,7 @@ export class MusicDetailsPageComponent implements OnInit {
   }
 
   track(): void {
-    setInterval(() => {
+    this.intervalId = setInterval(() => {
       const audioElement = document.getElementById("song-preview") as HTMLAudioElement;
       this.currentTime = Number(audioElement.currentTime.toFixed(0));
       if (this.currentTime > 30) this.currentTime = 30;
