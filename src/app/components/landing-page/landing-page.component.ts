@@ -7,10 +7,10 @@ import {Component} from '@angular/core';
 })
 export class LandingPageComponent {
   songs = [
-    {},
-    {},
-    {},
-    {},
-  ]
+    {id: 1},
+    {id: 2},
+    {id: 3},
+    {id: 4},
+  ];
 
 }

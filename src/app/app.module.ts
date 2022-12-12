@@ -6,13 +6,15 @@ import {AppComponent} from './app.component';
 import {LandingPageComponent} from './components/landing-page/landing-page.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {SongTileComponent} from './components/song-tile/song-tile.component';
+import {MusicDetailsPageComponent} from './components/music-details-page/music-details-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     NavbarComponent,
-    SongTileComponent
+    SongTileComponent,
+    MusicDetailsPageComponent
   ],
   imports: [
     BrowserModule,
@@ -21,4 +23,5 @@ import {SongTileComponent} from './components/song-tile/song-tile.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

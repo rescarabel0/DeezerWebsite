@@ -7,6 +7,6 @@ import {Component, Input} from '@angular/core';
 })
 export class SongTileComponent {
   @Input()
-  song: any
+  song: any;
 
 }

@@ -1,6 +1,13 @@
 @import "src/styles";
 
 .song-tile {
+  cursor: pointer;
+  transition: 1s all;
+
+  &:hover {
+    transform: scale(105%);
+  }
+
   display: flex;
   flex-direction: column;
   align-items: center;

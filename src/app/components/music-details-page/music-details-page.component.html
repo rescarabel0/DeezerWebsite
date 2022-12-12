@@ -1,0 +1,30 @@
+<div class="music-page">
+  <div class="breadcrumb">
+    <a href="">MÚSICAS</a> > TÍTULO DA MÚSICA
+  </div>
+  <div class="song-details">
+    <div class="song-image"></div>
+    <div class="song-text">
+      <p class="album">Álbum da música</p>
+      <p class="title">TÍTULO DA MÚSICA</p>
+      <p class="artist-launch">Artista da música, 2011</p>
+    </div>
+  </div>
+  <div class="song-preview">
+    <audio id="song-preview">
+      <source src="https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-10.mp3" type="audio/mp3">
+    </audio>
+    <div class="audio-controls">
+      <span (click)="toggle()" class="material-symbols-outlined play">
+        {{ playing ? 'pause' : 'play_arrow' }}
+      </span>
+      <span id="track-bar">
+        <span id="track-bar-thumb">
+        </span>
+      </span>
+      <span class="song-time">
+        {{'0:' + (currentTime > 9 ? currentTime : '0' + currentTime)}} / 0:30
+      </span>
+    </div>
+  </div>
+</div>
