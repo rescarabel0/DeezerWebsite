@@ -71,6 +71,10 @@
               "browserTarget": "DeezerWebsite:build:development"
             }
           },
+          "options": {
+            "browserTarget": "DeezerWebsite:build",
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {

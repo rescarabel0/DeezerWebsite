@@ -1,5 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import $ from 'jquery';
+import {DeezerService} from "../../services/deezer.service";
+import {Observable} from "rxjs";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-music-details-page',
@@ -15,13 +18,17 @@ export class MusicDetailsPageComponent implements OnInit, OnDestroy {
   thumbWidth = 0;
   intervalId: any;
 
-  constructor() {
+  music$: Observable<any>;
+
+  constructor(private deezerService: DeezerService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
     const trackBarWidth = $("#track-bar").width();
     this.widthBySongTime = trackBarWidth / 30;
-    this.track();
+    this.intervalId = this.track();
+    const musicId = this.route.snapshot.params.id;
+    this.music$ = this.deezerService.findTrackById(musicId);
   }
 
   ngOnDestroy() {
@@ -35,8 +42,8 @@ export class MusicDetailsPageComponent implements OnInit, OnDestroy {
     this.playing = !this.playing;
   }
 
-  track(): void {
-    this.intervalId = setInterval(() => {
+  track(): any {
+    return setInterval(() => {
       const audioElement = document.getElementById("song-preview") as HTMLAudioElement;
       this.currentTime = Number(audioElement.currentTime.toFixed(0));
       if (this.currentTime > 30) this.currentTime = 30;

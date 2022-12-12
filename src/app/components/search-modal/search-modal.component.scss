@@ -4,9 +4,6 @@
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-
-  width: 100%;
-  height: 100%;
 }
 
 .search {
@@ -100,6 +97,9 @@
     .music-list {
       list-style: none;
       padding: 0 !important;
+
+      max-height: 500px;
+      overflow: auto;
 
       .music-list-item {
         cursor: pointer;

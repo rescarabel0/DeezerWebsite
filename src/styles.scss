@@ -12,7 +12,7 @@ body {
       rgba(6, 173, 87, 0.29),
       rgba(26, 187, 104, 0.27)) no-repeat;
 
-  //height: 100vh !important;
+  height: 100vh !important;
 }
 
 html {
@@ -20,7 +20,7 @@ html {
 }
 
 .modal {
-  display: flex; /* Hidden by default */
+  display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;

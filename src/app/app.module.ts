@@ -9,6 +9,7 @@ import {SongTileComponent} from './components/song-tile/song-tile.component';
 import {MusicDetailsPageComponent} from './components/music-details-page/music-details-page.component';
 import {SearchModalComponent} from './components/search-modal/search-modal.component';
 import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {FormsModule} from "@angular/forms";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

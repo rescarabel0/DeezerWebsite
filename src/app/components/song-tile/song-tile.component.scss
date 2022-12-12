@@ -23,10 +23,13 @@
   }
 }
 
-// todo
-
 .song-image {
   width: 310px;
   height: 310px;
   background-color: white;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }

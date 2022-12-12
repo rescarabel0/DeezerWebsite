@@ -1,19 +1,21 @@
 <div class="music-page">
-  <div class="breadcrumb">
-    <a href="">MÚSICAS</a> > TÍTULO DA MÚSICA
-  </div>
-  <div class="song-details">
-    <div class="song-image"></div>
-    <div class="song-text">
-      <p class="album">Álbum da música</p>
-      <p class="title">TÍTULO DA MÚSICA</p>
-      <p class="artist-launch">Artista da música, 2011</p>
+  <ng-container *ngIf="music$ | async; let music">
+    <div class="breadcrumb">
+      <a href="">MÚSICAS</a> > TÍTULO DA MÚSICA
     </div>
-  </div>
-  <div class="song-preview">
+    <div class="song-details">
+      <div class="song-image"><img [src]="music.album.cover_xl" alt=""></div>
+      <div class="song-text">
+        <p class="album">{{music.album.title}}</p>
+        <p class="title">{{music.title}}</p>
+        <p class="artist-launch">{{music.artist.name}}, {{music.release_date | date:'YYYY'}}</p>
+      </div>
+    </div>
     <audio id="song-preview">
-      <source src="https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-10.mp3" type="audio/mp3">
+      <source src="{{music.preview}}" type="audio/mp3">
     </audio>
+  </ng-container>
+  <div [style.display]="(music$ | async) ? 'flex' : 'none'" class="song-preview">
     <div class="audio-controls">
       <span (click)="toggle()" class="material-symbols-outlined play">
         {{ playing ? 'pause' : 'play_arrow' }}

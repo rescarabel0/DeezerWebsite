@@ -6,7 +6,9 @@
   <div class="see-more">
     <p><u>Acessar músicas</u></p>
   </div>
-  <div class="songs">
-    <app-song-tile *ngFor="let song of songs" [song]="song"></app-song-tile>
-  </div>
+  <ng-container *ngIf="songs$ | async; let songs">
+    <div class="songs">
+      <app-song-tile *ngFor="let song of songs.tracks.data.slice(0,4)" [song]="song"></app-song-tile>
+    </div>
+  </ng-container>
 </div>

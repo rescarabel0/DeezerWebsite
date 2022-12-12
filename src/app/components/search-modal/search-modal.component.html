@@ -1,4 +1,4 @@
-<div class="modal" id="search_modal">
+<div (keyup.enter)="submit()" class="modal" id="search_modal">
   <div class="modal-content">
     <div class="search">
       <div class="modal-header">
@@ -18,13 +18,15 @@
       </div>
       <div class="middle-bar"></div>
       <div class="search-results">
-        <span class="result-count">Foram encontrados 0 resultados</span>
-        <ul class="music-list">
-          <li class="music-list-item" routerLink="musics/{{1}}">
-            <p>Título da música</p>
-            <small>Artista da música, Álbum</small>
-          </li>
-        </ul>
+        <ng-container *ngIf="results$ | async; let songs">
+          <span class="result-count">Foram encontrados {{songs.data.length}} resultados</span>
+          <ul class="music-list">
+            <li (click)="goToMusic(song.id)" *ngFor="let song of songs.data" class="music-list-item">
+              <p>{{song.title}}</p>
+              <small>{{song.artist.name}}, {{song.album.title}}</small>
+            </li>
+          </ul>
+        </ng-container>
       </div>
     </div>
   </div>
