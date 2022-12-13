@@ -8,13 +8,13 @@ import {DeezerService} from "../../services/deezer.service";
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent implements OnInit {
-  songs$: Observable<any[]>;
+  songs$: Observable<{ data: any[] }>;
 
   constructor(private deezerService: DeezerService) {
   }
 
   ngOnInit() {
-    this.songs$ = this.deezerService.getCharts();
+    this.songs$ = this.deezerService.getCharts("132", 0, "4");
   }
 
 }

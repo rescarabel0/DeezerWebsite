@@ -10,6 +10,8 @@ import {MusicDetailsPageComponent} from './components/music-details-page/music-d
 import {SearchModalComponent} from './components/search-modal/search-modal.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import {MusicsPageComponent} from './components/musics-page/musics-page.component';
+import {InfiniteScrollModule} from "ngx-infinite-scroll";
 
 @NgModule({
   declarations: [
@@ -18,13 +20,15 @@ import {HttpClientModule} from "@angular/common/http";
     NavbarComponent,
     SongTileComponent,
     MusicDetailsPageComponent,
-    SearchModalComponent
+    SearchModalComponent,
+    MusicsPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

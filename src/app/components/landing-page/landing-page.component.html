@@ -4,11 +4,11 @@
     <h2>Em um só lugar</h2>
   </div>
   <div class="see-more">
-    <p><u>Acessar músicas</u></p>
+    <p routerLink="musics"><u>Acessar músicas</u></p>
   </div>
   <ng-container *ngIf="songs$ | async; let songs">
     <div class="songs">
-      <app-song-tile *ngFor="let song of songs.tracks.data.slice(0,4)" [song]="song"></app-song-tile>
+      <app-song-tile *ngFor="let song of songs.tracks.data" [song]="song"></app-song-tile>
     </div>
   </ng-container>
 </div>

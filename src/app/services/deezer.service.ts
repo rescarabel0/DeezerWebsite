@@ -11,12 +11,13 @@ export class DeezerService {
   constructor(private httpClient: HttpClient) {
   }
 
+
   findTrackById(id: string): Observable<any> {
     return this.httpClient.get(this.deezerApiLink + "track/" + id);
   }
 
-  getCharts(): Observable<any[]> {
-    return this.httpClient.get<any[]>(this.deezerApiLink + "editorial/0/charts");
+  getCharts(chartId: string, index: number, limit: string): Observable<{ data: any[] }> {
+    return this.httpClient.get<{ data: any[] }>(this.deezerApiLink + `chart/${chartId}/tracks?index=${index}&limit=${limit}`);
   }
 
   search(text: string): Observable<any[]> {

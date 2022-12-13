@@ -1,0 +1,23 @@
+<div
+  class="musics-page">
+  <ng-container *ngIf="songs">
+    <div class="songs">
+      <div [routerLink]="songs[0].id" class="most-famous">
+        <img alt="" src="{{songs[0].album.cover_xl}}">
+        <div class="play-song">
+          <span class="material-symbols-outlined play-arrow">
+            play_arrow
+          </span>
+          <span class="main-song-title">{{songs[0].title}}</span>
+        </div>
+      </div>
+      <div
+        (scrolled)="onScroll()" [infiniteScrollDistance]="1" [infiniteScrollThrottle]="50"
+        class="song-list"
+        infiniteScroll
+      >
+        <app-song-tile *ngFor="let song of songs.slice(1)" [song]="song"></app-song-tile>
+      </div>
+    </div>
+  </ng-container>
+</div>

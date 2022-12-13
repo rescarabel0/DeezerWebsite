@@ -1,0 +1,63 @@
+@import "src/styles";
+
+.musics-page {
+  height: 100% !important;
+
+  padding-bottom: 20px;
+
+  .songs {
+    .most-famous {
+      cursor: pointer;
+
+      text-align: center;
+
+      position: relative;
+
+      img {
+        width: 100% !important;
+        max-height: 465px;
+        object-fit: cover;
+        object-position: 0 10%;
+        filter: brightness(20%);
+      }
+
+      .play-song {
+        color: white;
+
+        .play-arrow {
+          font-size: 94px;
+        }
+
+        .main-song-title {
+          font-family: $montserrat;
+          font-size: 20px;
+          color: white;
+        }
+
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .song-list {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      margin-top: 55px;
+
+      column-gap: 82px;
+      row-gap: 50px;
+    }
+  }
+}
