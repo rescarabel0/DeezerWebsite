@@ -1,7 +1,7 @@
 <div class="music-page">
   <ng-container *ngIf="music$ | async; let music">
     <div class="breadcrumb">
-      <a href="">MÚSICAS</a> > TÍTULO DA MÚSICA
+      <a href="/musics">MÚSICAS</a> > TÍTULO DA MÚSICA
     </div>
     <div class="song-details">
       <div class="song-image"><img [src]="music.album.cover_xl" alt=""></div>

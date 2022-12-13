@@ -29,6 +29,10 @@ export class SearchModalComponent implements OnInit {
   }
 
   goToMusic(id: string): void {
+    document.getElementById("search_modal").style.display = "none";
+    this.search = null;
+    this.results$ = null;
+
     if (this.router.url.match("/musics/[1-9]")) {
       window.location.replace("/musics/" + id);
       return;

@@ -8,7 +8,7 @@
   </div>
   <ng-container *ngIf="songs$ | async; let songs">
     <div class="songs">
-      <app-song-tile *ngFor="let song of songs.tracks.data" [song]="song"></app-song-tile>
+      <app-song-tile *ngFor="let song of songs.data" [song]="song"></app-song-tile>
     </div>
   </ng-container>
 </div>
