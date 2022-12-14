@@ -1,0 +1,17 @@
+<div
+  class="my-musics-page">
+  <div class="title">
+    <h1>Minhas músicas</h1>
+  </div>
+  <ng-container *ngIf="songs">
+    <div class="songs">
+      <div
+        class="song-list"
+      >
+        <ng-container *ngFor="let song$ of songs">
+          <app-song-tile *ngIf="song$ | async; let song" [song]="song"></app-song-tile>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+</div>

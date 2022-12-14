@@ -5,10 +5,18 @@
     </div>
     <div class="song-details">
       <div class="song-image"><img [src]="music.album.cover_xl" alt=""></div>
-      <div class="song-text">
-        <p class="album">{{music.album.title}}</p>
-        <p class="title">{{music.title}}</p>
-        <p class="artist-launch">{{music.artist.name}}, {{music.release_date | date:'YYYY'}}</p>
+      <div class="song-info">
+        <div class="song-text">
+          <p class="album">{{music.album.title}}</p>
+          <p class="title">{{music.title}}</p>
+          <p class="artist-launch">{{music.artist.name}}, {{music.release_date | date:'YYYY'}}</p>
+        </div>
+        <div (click)="toggleMusic(music.id)" class="save-song">
+          <span [class.active]="musicIsSaved(music.id)" class="material-symbols-outlined">
+            favorite
+          </span>
+          {{musicIsSaved(music.id) ? 'Música salva' : 'Salvar música'}}
+        </div>
       </div>
     </div>
     <audio id="song-preview">

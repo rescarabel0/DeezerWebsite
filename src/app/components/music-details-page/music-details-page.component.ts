@@ -3,6 +3,7 @@ import $ from 'jquery';
 import {DeezerService} from "../../services/deezer.service";
 import {Observable} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
+import {MusicService} from "../../services/music.service";
 
 @Component({
   selector: 'app-music-details-page',
@@ -20,7 +21,7 @@ export class MusicDetailsPageComponent implements OnInit, OnDestroy {
 
   music$: Observable<any>;
 
-  constructor(private deezerService: DeezerService, private route: ActivatedRoute) {
+  constructor(private deezerService: DeezerService, private route: ActivatedRoute, private musicService: MusicService) {
   }
 
   ngOnInit() {
@@ -60,5 +61,17 @@ export class MusicDetailsPageComponent implements OnInit, OnDestroy {
         this.thumbWidth = 0;
       }
     }, 1000);
+  }
+
+  toggleMusic(songId: string): void {
+    if (this.musicIsSaved(songId))
+      this.musicService.removeMusic(songId);
+    else
+      this.musicService.saveMusic(songId);
+  }
+
+
+  musicIsSaved(songId: string): boolean {
+    return this.musicService.musicIsSaved(songId);
   }
 }

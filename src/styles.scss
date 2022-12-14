@@ -4,15 +4,17 @@
 $montserrat: "Montserrat", sans-serif;
 
 body {
-  margin: 0 !important;
-
   background: linear-gradient(
       rgba(241, 42, 42, 0.08),
       rgba(191, 28, 59, 0.19),
       rgba(6, 173, 87, 0.29),
       rgba(26, 187, 104, 0.27)) no-repeat;
+}
 
-  height: 100% !important;
+html, body {
+  min-height: 100vh;
+  height: auto;
+  margin: 0;
 }
 
 html {

@@ -12,6 +12,7 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {MusicsPageComponent} from './components/musics-page/musics-page.component';
 import {InfiniteScrollModule} from "ngx-infinite-scroll";
+import {MyMusicsPageComponent} from './components/my-musics-page/my-musics-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {InfiniteScrollModule} from "ngx-infinite-scroll";
     SongTileComponent,
     MusicDetailsPageComponent,
     SearchModalComponent,
-    MusicsPageComponent
+    MusicsPageComponent,
+    MyMusicsPageComponent
   ],
   imports: [
     BrowserModule,

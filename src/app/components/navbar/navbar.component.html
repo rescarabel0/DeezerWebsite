@@ -2,11 +2,14 @@
   <div class="navbar-brand" routerLink="">
     <img alt="" src="assets/deezer_logo.png">
   </div>
-  <div (click)="toggleModal()" class="search">
+  <div class="nav-options">
+    <p routerLink="/my">My Musics</p>
+    <div (click)="toggleModal()" class="search">
     <span class="material-symbols-outlined icon">
       search
     </span>
-    Search
+      Search
+    </div>
   </div>
 </nav>
 
